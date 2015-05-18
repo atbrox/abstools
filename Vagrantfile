@@ -29,7 +29,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at
   # https://docs.vagrantup.com/v2/
   
-  config.vm.network "public_network"
+  config.vm.network "public_network", bridge: 'en0: Ethernet'
 
   config.vm.box = "ubuntu/trusty64"
 
