@@ -75,3 +75,22 @@ instead of adding a new local commit that merges the `master` and
 `origin/master` branches.  Conflicts have to be resolved per patch
 (via `git add` + `git rebase --continue`) instead of in one go, but we
 get a cleaner history.
+
+== VAGRANT SETUP FOR CONTINUOUS DEPLOYMENT AMUND ==
+pwd
+echo "STARTING vagrant up"
+date
+time vagrant up
+echo "FINISHING vagrant up"
+date
+vagrant ssh --command ls
+vagrant ssh --command pwd
+vagrant ssh --command hostname
+vagrant ssh --command "df -h"
+echo "STARTING vagrant suspend"
+date
+vagrant --force suspend # or vagrant halt or vagrant suspend
+echo "FINISHING vagrant suspend" 
+date
+#VBoxManage list vms | grep -i abs | cut -d'"' -f3- | cut -d' ' -f2- | cut -d'{' -f2-| cut -d'}' -f1
+#http://stackoverflow.com/questions/23016685/completely-remove-vagrant-virtualbox-boxes-from-command-line
