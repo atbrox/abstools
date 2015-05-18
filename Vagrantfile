@@ -28,6 +28,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # All Vagrant configuration is done here.  For a complete reference,
   # please see the online documentation at
   # https://docs.vagrantup.com/v2/
+  
+  config.vm.network = "public_network"
 
   config.vm.box = "ubuntu/trusty64"
 
